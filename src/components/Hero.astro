@@ -4,45 +4,62 @@ import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import XIcon from "@/components/icons/XIcon.astro"
+import GitHub from "./icons/GitHub.astro"
+import WhatsApp from "./icons/WhatsApp.astro"
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
+      src="/avatar.webp"
       alt={personalImageAlt}
     />
-    <a
+    <Badge>Développeur Web Full Stack</Badge>
+    <!-- <a
       href="https://linkedin.com/in/midudev"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
-    </a>
+    </a> -->
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hey, soy midudev
+    👋 Salut, je suis Elfried Fortunatus KIDJE,
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    +15 años de experiencia. <strong
-      >Ingeniero de Software y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
+    +4 années d'expériences en tant que <strong>Développeur web full stack. </strong>
+      Je suis spécialisé dans le <strong>développement backend</strong>, un domaine qui me passionne depuis mes débuts. Ce que j'aime, c'est écrire du code qui a du sens, construire des systèmes utiles et résoudre des problèmes de manière simple et efficace. J'avance avec mon clavier, une idée en tête, et l'envie de toujours faire mieux.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:miduga@gmail.com">
+    <SocialPill href="mailto:elfriedv16@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      Email
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/midudev">
+    <SocialPill href="https://linkedin.com/in/fortunatus-ek">
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/v1p3r75">
+      <GitHub class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="https://x.com/@elfriedv16">
+      <XIcon class="size-4" />
+      Twitter
+    </SocialPill>
+    <SocialPill href="https://wa.me/22996457545">
+      <WhatsApp class="size-4" />
+      WhatsApp
+    </SocialPill>
+    <SocialPill href="https://youtube.com/@devlancing">
+      <WhatsApp class="size-4" />
+      YouTube
     </SocialPill>
   </nav>
 </div>

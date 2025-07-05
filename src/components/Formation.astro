@@ -1,0 +1,31 @@
+---
+import FormationItem from "./FormationItem.astro"
+
+const FORMATIONS = [
+  {
+    date: "2023",
+    school: "Institut de Formation et de Recherche en Informatique (IFRI) - Université d'Abomey Calavi",
+    schoolUrl: "https://ifri-uac.bj/",
+    degree: "Formation en Systèmes Embarqués Et Internet des Objets (SEIoT)",
+    city: "Abomey-Calavi, Bénin"
+  },
+  {
+    date: "2020",
+    school: "Lycée Technique de Natitingou",
+    schoolUrl: "https://x.com/lnatitingou",
+    degree: "Diplome du Technicien en Installation et Maintenance en Informatique (DT / IMI)",
+    city: "Natitingou, Bénin"
+  },
+  
+]
+---
+
+<ol class="relative mt-16">
+  {
+    FORMATIONS.map((formation) => (
+      <li class="">
+        <FormationItem {...formation} />
+      </li>
+    ))
+  }
+</ol>

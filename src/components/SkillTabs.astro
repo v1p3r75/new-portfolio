@@ -1,0 +1,126 @@
+---
+import LinkButton from "./LinkButton.astro";
+
+const skills = {
+  Frontend: [
+    {
+      name: "JavaScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "TypeScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    },
+    {
+      name: "React",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    },
+    {
+      name: "Vue.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    },
+    {
+      name: "Tailwind CSS",
+      logo: "https://static.cdnlogo.com/logos/t/58/tailwindcss.svg",
+    },
+    {
+      name: "Bootstrap",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    },
+    {
+      name: "React Native (Expo)",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    }
+  ],
+  Backend: [
+    {
+      name: "PHP",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    },
+    {
+      name: "Symfony",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg",
+    },
+    {
+      name: "Laravel",
+      logo: "https://static.cdnlogo.com/logos/l/23/laravel.svg",
+    },
+    {
+      name: "Node.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    },
+  ],
+  Database: [
+    {
+      name: "MySQL",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    },
+    {
+      name: "PostgreSQL",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    },
+    {
+      name: "MongoDB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    },
+  ],
+  DevOps: [
+    {
+      name: "Linux",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    },
+    {
+      name: "Docker",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    },
+    {
+      name: "Amazon Web Services",
+      logo: "https://static.cdnlogo.com/logos/a/19/aws.svg",
+    },
+    {
+      name: "CI/CD",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/circleci/circleci-original.svg",
+    },
+  ],
+  "Architecture Logicielle": [
+    {
+      name: "Design Patterns",
+      logo: "/architechture.png",
+    },
+    {
+      name: "Architecture Hexagonale",
+      logo: "/architechture.png",
+    },
+    {
+      name: "Clean Architecture",
+      logo: "/architechture.png",
+    },
+    {
+      name: "Domain-Driven Design",
+      logo: "/architechture.png",
+    }
+  ]
+};
+---
+
+<section class="w-full max-w-6xl mx-auto py-6">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    {
+      Object.entries(skills).map(([domain, techs]) => (
+        <div class="p">
+          <h3 class="text-lg font-semibold text-yellow-400 blue-600 mb-4">
+            {domain}
+          </h3>
+          <div class="space-y-3">
+            {techs.map((skill) => (
+              <div class="flex items-center space-x-2">
+                <img src={skill.logo} alt={skill.name} class="h-5 w-5" />
+                <span>{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,93 +1,189 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import React from "./icons/React.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import PHP from "./icons/PHP.astro";
+import Redux from "./icons/Redux.astro";
+import Python from "./icons/Python.astro";
+import Django from "./icons/Django.astro";
+import Laravel from "./icons/Laravel.astro";
+import Composer from "./icons/Composer.astro";
+import LinkInline from "./LinkInline.astro";
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  PHP: {
+    name: "PHP",
+    class: "bg-[#777bb3] text-white",
+    icon: PHP,
+  },
+  REACT: {
+    name: "ReactJS",
+    class: "bg-[#61DAFB] text-black",
+    icon: React,
   },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
+  REDUX: {
+    name: "Redux",
+    class: "bg-[#764ABC] text-white",
+    icon: Redux,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3776AB] text-white",
+    icon: Python,
+  },
+  DJANGO: {
+    name: "Django",
+    class: "bg-[#092E20] text-white",
+    icon: Django,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-white text-[#FF2D20]",
+    icon: Laravel,
+  },
+  COMPOSER: {
+    name: "Composer",
+    class: "bg-[#885630] text-white",
+    icon: Composer,
+  },
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Moov Money PHP SDK",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Moov Money PHP SDK est une bibliothèque qui permet aux développeurs d'intégrer facilement l'API de Moov Money dans leurs applications PHP sans avoir à manipuler directement les requêtes SOAP.",
+    link: "https://github.com/v1p3r75/moov-money-api-php-sdk",
+    github: "https://github.com/v1p3r75/moov-money-api-php-sdk",
+    image: "/projects/moov-money-php-sdk.webp",
+    tags: [TAGS.PHP, TAGS.COMPOSER],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "AfrikFlow",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "AfrikFlow est une application web et mobile révolutionnaire conçue pour faciliter les transactions financières en Afrique de l'Ouest (zone UEMOA). Ce projet utilise les agrégateurs de paiement locaux ainsi que les principaux opérateurs de mobile money pour offrir un service de transfert d'argent simple, rapide et sécurisé",
+    link: "https://afrik-flow-web-app.vercel.app/",
+    image: "/projects/afrikflow-home.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
-]
+  {
+    title: "FriedShop",
+    description:
+      "Ce projet est une application web front-end pour un restaurant fast-food fictif appelé Friedshop, développé avec ReactJS. Il permet aux utilisateurs de parcourir le menu, de passer des commandes et de suivre leur statut.",
+    link: "https://friedshop.vercel.app/",
+    github: "https://github.com/v1p3r75/moov-money-api-php-sdk",
+    image: "/projects/friedshop.webp",
+    tags: [TAGS.REACT, TAGS.REDUX, TAGS.LARAVEL],
+  },
+  {
+    title: "NexaORM",
+    description:
+      "NexaORM est une bibliothèque PHP moderne de mappage objet-relationnel (ORM) conçue pour simplifier les interactions entre les bases de données et rationaliser le développement d'applications PHP. Elle fournit un moyen léger et intuitif de gérer les entités, les relations et les requêtes de base de données.",
+    link: "https://nexa-orm.vercel.app/",
+    github: "https://github.com/v1p3r75/NexaORM",
+    image: "/projects/nexa.webp",
+    tags: [TAGS.PHP, TAGS.COMPOSER],
+  },
+  {
+    title: "Floky",
+    description:
+      "Floky est un framework MVC (Modèle-Vue-Contrôleur) pour le développement d'applications web en PHP. Il offre une structure organisée pour votre code, des fonctionnalités puissantes et une flexibilité pour créer des applications web robustes et évolutives.",
+    link: "https://floky-docs.vercel.app/",
+    github: "https://github.com/v1p3r75/floky",
+    image: "/projects/floky.webp",
+    tags: [TAGS.PHP, TAGS.COMPOSER],
+  },
+  {
+    title: "TimeTable",
+    description:
+      "TimeTable est un projet qui consiste à déployer une application capable de gérer la planification des emplois du temps dans une école.",
+    link: "https://timetableapp.pythonanywhere.com",
+    github: "https://github.com/v1p3r75/timetable",
+    image: "/projects/timetable.webp",
+    tags: [TAGS.PYTHON, TAGS.DJANGO],
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
+  <LinkInline href="https://github.com/v1p3r75?tab=repositories">
+    Voir plus (GitHub) {" "}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-5 icon icon-tabler icon-tabler-chevron-right"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M9 6l6 6l-6 6"></path>
+      </>
+    </svg>
+  </LinkInline>
 </div>
-
-
-
